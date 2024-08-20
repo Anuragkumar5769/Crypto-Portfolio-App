@@ -1,0 +1,119 @@
+body {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.currency-select, .search-box {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.currency-select label, .search-box input {
+  font-size: 1.1rem;
+}
+
+.currency-select select, .search-box input, .search-box button {
+  padding: 10px;
+  background-color: #2b2b2b;
+  border: 1px solid #444;
+  border-radius: 5px;
+  color: #e0e0e0;
+  margin-left: 10px;
+}
+
+.currency-select select:hover, .search-box input:focus, .search-box button:hover {
+  background-color: #3a3a3a;
+}
+
+.search-box input {
+  width: 60%;
+  margin-right: 10px;
+}
+
+.search-box button {
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-box button:hover {
+  background-color: #555;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #2b2b2b;
+  border: 1px solid #444;
+}
+
+table thead {
+  background-color: #333;
+}
+
+table thead th {
+  padding: 15px;
+  font-weight: bold;
+  text-align: left;
+  color: #ffbbbbea;
+}
+
+table tbody tr {
+  transition: background-color 0.3s ease;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #252525;
+}
+
+table tbody tr:hover {
+  background-color: #3a3a3a;
+}
+
+table td {
+  padding: 15px;
+  border-top: 1px solid #444;
+}
+
+table a {
+  color: #f1c40f;
+  text-decoration: none;
+}
+
+table a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: #042231;
+  border: none;
+  padding: 8px 15px;
+  color: #e0e0e0;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buttonlal{
+background-color: #0637b32f;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+.headwala{
+  background-color: #055b66;
+}
+
+.butto{
+  color: #042231;
+}
