@@ -6,6 +6,8 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Chart, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
 import './CoinDetails.css';
 
+const apiKey = import.meta.env.VITE_API_KEY;
+
 Chart.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 function CoinDetails({ coinId }) {
@@ -17,14 +19,19 @@ function CoinDetails({ coinId }) {
   useEffect(() => {
     const fetchCoinDetails = async () => {
       try {
-        const coinDetailsResponse = await axios.get(`https://api.coingecko.com/api/v3/coins/${coinId}?x_cg_demo_api_key=CG-ZjBJTGESqy2YVi29DD7vFQMN`);
+        const coinDetailsResponse = await axios.get(`https://api.coingecko.com/api/v3/coins/${coinId}`, {
+          params: {
+            x_cg_demo_api_key: apiKey, // Correct usage of the API key
+          }
+        });
         setCoinDetails(coinDetailsResponse.data);
 
         const daysDiff = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24));
-        const marketDataResponse = await axios.get(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?x_cg_demo_api_key=CG-ZjBJTGESqy2YVi29DD7vFQMN`, {
+        const marketDataResponse = await axios.get(`https://api.coingecko.com/api/v3/coins/${coinId}/market_chart`, {
           params: {
             vs_currency: 'inr',
             days: daysDiff,
+            x_cg_demo_api_key: apiKey,
           },
         });
 

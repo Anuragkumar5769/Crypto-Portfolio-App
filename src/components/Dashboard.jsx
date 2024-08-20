@@ -3,14 +3,17 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import './Dashboard.css';
 
+const apiKey = import.meta.env.VITE_API_KEY;
+
 function Dashboard({ addToWatchlist }) {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState('');
 
   useEffect(() => {
-    axios.get('https://api.coingecko.com/api/v3/coins/markets?x_cg_demo_api_key=CG-ZjBJTGESqy2YVi29DD7vFQMN', {
+    axios.get('https://api.coingecko.com/api/v3/coins/markets', {
       params: {
         vs_currency: 'INR',
+        x_cg_demo_api_key: apiKey,
       }
     })
       .then(response => {
